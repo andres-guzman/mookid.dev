@@ -72,7 +72,7 @@ body {
     color: var(--color__dark);
     height: 100%;
     margin: 0;
-    background-color: rgba(207, 203, 200, 1);
+    background-color: var(--color__bright);
     box-sizing: border-box;
     text-transform: uppercase;
 }
@@ -101,6 +101,23 @@ ul li {
 .clock {
     fill: none;
 	stroke: var(--color__dark);
+}
+
+
+/* ==========================================================================
+   main
+   ========================================================================== */
+
+main {
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.scrollbar-track-y {
+    display: none !important;
 }
 
    
@@ -278,6 +295,7 @@ a[href*="simpshots.com"]::before {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    border-bottom: 1px solid var(--color__dark);
 }
 
 .hello--box {
@@ -322,10 +340,37 @@ a[href*="simpshots.com"]::before {
 
 
 
+#goodbye {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    box-sizing: border-box;
+}
+
+.goodbye--box {
+    text-align: center;
+}
+
+.goodbye--box > svg {
+    fill: var(--color__dark);
+    margin-bottom: 22px;
+}
+
+.logo--goodbyebox {
+    fill: none;
+    stroke: var(--color__dark);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
 
 
 /* ==========================================================================
-   section goodbye
+   media queries
    ========================================================================== */
 
 
