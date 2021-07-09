@@ -41,7 +41,7 @@
     --color__bright: rgba(207, 203, 200, 1);
     --color__dark: rgba(28, 28, 28, 1);
 
-    --fsize__small: 1rem;
+    --fsize__small: 1rem/1.42;
     --fsize__huge: clamp(5rem, 10vw, 15rem)/1;
 
     --ffamily__regular: "Founders Regular", Arial, Helvetica, sans-serif;
@@ -57,14 +57,10 @@
    ========================================================================== */
 
 
-
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
   
 ::selection {
-    background: #b3d4fc;
+    color: var(--color__bright);
+    background: var(--color__dark);
     text-shadow: none;
 }
 
@@ -192,7 +188,6 @@ ul li {
     color: var(--color__bright);
 }
 
-
 #websites--url li a::after {
     content: "";
     position: absolute;
@@ -271,14 +266,53 @@ a[href*="simpshots.com"]::before {
 
 
 
-
 /* ==========================================================================
    section hello
    ========================================================================== */
 
 
+
 #hello {
     height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.hello--box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 75px;
+}
+
+.hello--box__intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+    max-width: 580px;
+}
+
+.hello--box__intro > h1,
+.hello--box__intro > p {
+    margin-bottom: 60px;
+}
+
+#hello--mookid {
+    width: auto;
+    max-height: 350px;
+}
+
+.hello--social a {
+    color: var(--color__dark);
+    font: var(--fsize__small) var(--ffamily__bold);
+    text-decoration: none;
+    transition: var(--transition__medium);
+}
+
+.hello--social a:hover {
+    opacity: 0.5;
 }
 
 
