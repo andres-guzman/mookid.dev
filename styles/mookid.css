@@ -43,7 +43,7 @@
     --color__accent: rgba(51, 255, 238, 1);
 
     --fsize__small: 1rem/1.42;
-    --fsize__huge: clamp(5rem, 10vw, 15rem)/1;
+    --fsize__huge: clamp(3.25rem, 10vw, 15rem)/1;
 
     --ffamily__regular: "Founders Regular", Arial, Helvetica, sans-serif;
     --ffamily__bold: "Founders Bold", Arial, Helvetica, sans-serif;
@@ -136,7 +136,8 @@ main {
     left: 0;
 }
 
-.scrollbar-track-y {
+.scrollbar-track-y,
+.scrollbar-track-x {
     display: none !important; /* override default from javascript file */
 }
 
@@ -153,10 +154,12 @@ main {
     grid-template-rows: 1fr auto;
     padding: 100px 100px 50px 100px;
     margin-bottom: 200px;
+    transition: var(--transition__medium);
 }
 
 .welcome--mookid {
     max-width: 50%;
+    transition: var(--transition__medium);
 }
 
 .welcome--hider {
@@ -323,6 +326,9 @@ a[href*="simpshots.com"]::before {
     background-image: url(../_assets/shot_simpshots.jpg);
 }
 
+.websites--date {
+    display: inline;
+}
 
 
 
@@ -417,3 +423,63 @@ a[href*="simpshots.com"]::before {
    ========================================================================== */
 
 
+@media all and (max-width: 990px) {
+    #welcome {
+        padding: 50px;
+        margin-bottom: 50px;
+    }
+
+    .welcome--mookid {
+        max-width: 100%;
+    }
+
+    .welcome--mookid > p {
+        text-align: center;
+    }
+
+    #websites > h1 {
+        margin-left: 50px;
+    }
+
+    #websites--url li a {
+        padding: 10px 50px 15px 50px;
+    }
+
+    #websites--url li a::after {
+        left: 50px;
+        right: 50px;
+    }
+
+    .websites--date {
+        display: none;
+    }
+
+    #hello {
+        display: block;
+        padding: 50px;
+    }
+    
+    .hello--box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hello--box__intro  {
+        text-align: center;
+        max-width: unset;
+    }
+
+    .hello--box__intro > p {
+        line-height: 1.2;
+    }
+
+    #hello--mookid {
+        height: auto;
+        max-height: unset;
+        display: inline-block;
+    }
+    
+    #goodbye {
+        padding: 50px;
+    }
+}
