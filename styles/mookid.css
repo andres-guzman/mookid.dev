@@ -40,6 +40,7 @@
 
     --color__bright: rgba(207, 203, 200, 1);
     --color__dark: rgba(28, 28, 28, 1);
+    --color__accent: rgba(51, 255, 238, 1);
 
     --fsize__small: 1rem/1.42;
     --fsize__huge: clamp(5rem, 10vw, 15rem)/1;
@@ -56,6 +57,15 @@
    base styles
    ========================================================================== */
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    
+    to {
+        opacity: 1;
+    }
+}
 
   
 ::selection {
@@ -69,12 +79,20 @@ html {
 }
 
 body {
+    opacity: 0;
     color: var(--color__dark);
     height: 100%;
     margin: 0;
     background-color: var(--color__bright);
     box-sizing: border-box;
     text-transform: uppercase;
+    animation-name: fadeIn;
+    animation-duration: 2.35s;
+    animation-delay: 1s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.22, .61, .36, 1);
 }
 
 h1 {
@@ -108,8 +126,10 @@ ul li {
    main
    ========================================================================== */
 
+
+
 main {
-    position: fixed !important;
+    position: fixed !important; /* override default from javascript file */
     top: 0;
     right: 0;
     bottom: 0;
@@ -117,8 +137,9 @@ main {
 }
 
 .scrollbar-track-y {
-    display: none !important;
+    display: none !important; /* override default from javascript file */
 }
+
 
    
 /* ==========================================================================
@@ -138,8 +159,30 @@ main {
     max-width: 50%;
 }
 
-.welcome--mookid > svg {
+.welcome--hider {
+    overflow: hidden;
+}
+
+@keyframes moveUp {
+    from {
+        transform: translateY(30%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
+.welcome--hider > svg {
+    opacity: 0;
     margin-bottom: 30px;
+    animation-name: fadeIn, moveUp;
+    animation-duration: 0.65s;
+    animation-delay: 1.5s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.22, .61, .36, 1);
 }
 
 .welcome--mookid > p {
@@ -165,7 +208,7 @@ main {
 }
 
 .welcome--footer > p > svg {
-    vertical-align: text-bottom;
+    vertical-align: bottom;
 }
 
 
@@ -202,7 +245,7 @@ main {
 }
 
 #websites--url li a:hover {
-    color: var(--color__bright);
+    color: var(--color__accent);
 }
 
 #websites--url li a::after {
@@ -330,7 +373,7 @@ a[href*="simpshots.com"]::before {
 }
 
 .hello--social a:hover {
-    opacity: 0.5;
+    color: rgba(51, 255, 238, 1);
 }
 
 
