@@ -76,3 +76,14 @@ const scrollbar = Scrollbar.init(document.querySelector('main'), {
 	damping: 0.05, // 0.05
     alwaysShowTracks: true
 });
+
+// date
+var dateObj = new Date();
+var month = dateObj.getUTCMonth() + 1;
+var day = dateObj.getUTCDate();
+var year = dateObj.getUTCFullYear();
+const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+newdate = monthNames[dateObj.getMonth()] + " " + day + ", " + year;
+
+document.getElementById("date").innerHTML = newdate;
