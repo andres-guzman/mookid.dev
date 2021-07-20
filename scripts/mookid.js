@@ -79,9 +79,9 @@ const scrollbar = Scrollbar.init(document.querySelector('main'), {
 
 // date
 var dateObj = new Date();
-var month = dateObj.getUTCMonth() + 1;
-var day = dateObj.getUTCDate();
-var year = dateObj.getUTCFullYear();
+var month = dateObj.getMonth() + 1;
+var day = dateObj.getDate();
+var year = dateObj.getFullYear();
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 newdate = monthNames[dateObj.getMonth()] + " " + day + ", " + year;
