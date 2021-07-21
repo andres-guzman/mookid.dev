@@ -401,6 +401,7 @@ a[href*="simpshots.com"]::before {
 
 .goodbye--box {
     text-align: center;
+    width: 100%;
 }
 
 .goodbye--box > svg {
